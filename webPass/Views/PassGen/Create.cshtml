@@ -34,40 +34,40 @@ else
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.webSiteName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.webSiteName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.webSiteName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.webSiteName, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.webSiteName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.userName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.userName, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.userName, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.userName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.keyValue, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.keyValue, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.LabelFor(model => model.keyValue, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
+                @Html.EditorFor(model => model.keyValue, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" } })
                 @Html.ValidationMessageFor(model => model.keyValue, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.lengthOfPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.lengthOfPassword, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
                 @Html.EditorFor(model => model.lengthOfPassword, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.lengthOfPassword, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.useSpecialCharacter, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+            @Html.LabelFor(model => model.useSpecialCharacter, htmlAttributes: new { @class = "control-label col-md-3" })
+            <div class="col-md-9">
                 <div class="checkbox">
                     @Html.EditorFor(model => model.useSpecialCharacter)
                     @Html.ValidationMessageFor(model => model.useSpecialCharacter, "", new { @class = "text-danger" })
@@ -76,8 +76,8 @@ else
         </div>
 
         <div class="form-group">
-            <label class="control-label col-md-2" for="Captcha">Please enter Captcha</label>
-            <div class="col-md-10">
+            <label class="control-label col-md-3" for="Captcha">Please enter Captcha</label>
+            <div class="col-md-9">
                     @*@Html.MathCaptcha()*@
                     @Html.Captcha(1)
             </div>
@@ -110,8 +110,19 @@ else
       document.execCommand("copy");
     }
 
-    $('input[type=submit]').click(function () {
-        var clickedBtn = $(this)
-         clickedBtn.hide(100);
+    //$('input[type=submit]').click(function () {
+    //    var clickedBtn = $(this)
+    //     clickedBtn.hide(100);
+    //});
+
+    $(document).ready(function () {
+        //$("frm :input").attr("autocomplete", "off");
+         $('input[type=submit]').show(100);
+
+        $("form").submit(function(e) {
+            //e.preventDefault();
+            // rest code goes here
+            clickedBtn.hide(100);
+        });
     });
 </script>

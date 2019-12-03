@@ -11,7 +11,7 @@ namespace PasswordGenerator
         public static string GetPassword(Parameters parameter)
         {
             if (parameter.lengthOfPassword < 3)
-                throw new Exception("lengthOfPassword must be greater than 3");
+                throw new Exception("Length of generated password must be greater than 3");
 
             string password = string.Empty;
             Encryptor enc = new Encryptor();
